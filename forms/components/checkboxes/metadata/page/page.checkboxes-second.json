@@ -1,0 +1,40 @@
+{
+  "_id": "page.checkboxes-second",
+  "_type": "page.singlequestion",
+  "components": [
+    {
+      "_id": "page.checkboxes-second--checkboxes",
+      "_type": "checkboxes",
+      "hint": "Checkboxes - Second - hint text",
+      "items": [
+        {
+          "_id": "page.checkboxes-second--checkboxes--checkbox.auto_name__7",
+          "_type": "checkbox",
+          "hint": "One - hint text",
+          "label": "One",
+          "name": "auto_name__4",
+          "value": "1"
+        },
+        {
+          "_id": "page.checkboxes-second--checkboxes--checkbox.auto_name__8",
+          "_type": "checkbox",
+          "hint": "Two - hint text",
+          "label": "Two",
+          "name": "auto_name__5",
+          "value": "2"
+        },
+        {
+          "_id": "page.checkboxes-second--checkboxes--checkbox.auto_name__9",
+          "_type": "checkbox",
+          "hint": "Three - hint text",
+          "label": "Three",
+          "name": "auto_name__6",
+          "value": "3"
+        }
+      ],
+      "legend": "Checkboxes - Second"
+    }
+  ],
+  "sectionHeading": "Checkboxes - Second",
+  "url": "checkboxes-second"
+}

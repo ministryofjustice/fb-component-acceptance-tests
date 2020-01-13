@@ -1,0 +1,38 @@
+{
+  "_id": "page.radios-second",
+  "_type": "page.singlequestion",
+  "components": [
+    {
+      "_id": "page.radios-second--radios.auto_name__2",
+      "_type": "radios",
+      "hint": "Radios - Second - hint text",
+      "items": [
+        {
+          "_id": "page.radios-second--radios.auto_name__2--radio.auto_value__1",
+          "_type": "radio",
+          "hint": "One - hint text",
+          "label": "One",
+          "value": "1"
+        },
+        {
+          "_id": "page.radios-second--radios.auto_name__2--radio.auto_value__2",
+          "_type": "radio",
+          "hint": "Two - hint text",
+          "label": "Two",
+          "value": "2"
+        },
+        {
+          "_id": "page.radios-second--radios.auto_name__2--radio.auto_value__3",
+          "_type": "radio",
+          "hint": "Three - hint text",
+          "label": "Three",
+          "value": "3"
+        }
+      ],
+      "legend": "Radios - Second",
+      "name": "auto_name__2"
+    }
+  ],
+  "sectionHeading": "Radios - Second - section heading",
+  "url": "radios-second"
+}
