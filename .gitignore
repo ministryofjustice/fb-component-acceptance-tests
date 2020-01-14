@@ -1,3 +1,4 @@
+.DS_Store
 .av
 .publisher
 .submitter
@@ -7,4 +8,4 @@
 .runner
 .pdf-generator
 .service-token-cache
-.DS_Store
+.components

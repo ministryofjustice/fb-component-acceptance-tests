@@ -27,6 +27,13 @@
           "hint": "Three - hint text",
           "label": "Three",
           "name": "auto_name__3"
+        },
+        {
+          "_id": "page.checkboxes-first--checkboxes--checkbox.auto_name__4",
+          "_type": "checkbox",
+          "hint": "Four - hint text",
+          "label": "Four",
+          "name": "auto_name__4"
         }
       ],
       "legend": "Checkboxes - First"
