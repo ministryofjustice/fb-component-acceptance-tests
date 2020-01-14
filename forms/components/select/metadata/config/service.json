@@ -1,5 +1,0 @@
-{
-  "_id": "service",
-  "_isa": "@ministryofjustice/fb-components-core=>service",
-  "_type": "config.service"
-}
