@@ -5,7 +5,7 @@
     {
       "_id": "page.date-fourth--date.auto_name__4",
       "_type": "date",
-      "hint": "Date - Fourth",
+      "hint": "Date - Fourth - hint text",
       "legend": "Date - Fourth",
       "legendSummary": "Date - Fourth - summary version",
       "name": "date-fourth"

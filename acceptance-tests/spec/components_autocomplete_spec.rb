@@ -1,7 +1,7 @@
 require 'capybara/rspec'
 
 describe 'Autocomplete' do
-  it 'Renders Autocomplete components with all the expected furniture' do
+  it 'Renders Autocomplete components' do
     visit 'http://components-autocomplete-app:3000'
     click_on 'Start'
 

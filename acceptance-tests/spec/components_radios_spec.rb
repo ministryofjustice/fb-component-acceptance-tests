@@ -1,7 +1,7 @@
 require 'capybara/rspec'
 
 describe 'Radios' do
-  it 'Renders Radios components with all the expected furniture' do
+  it 'Renders Radios components' do
     visit 'http://components-radios-app:3000'
     click_on 'Start'
 

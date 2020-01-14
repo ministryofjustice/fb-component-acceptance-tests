@@ -1,7 +1,7 @@
 require 'capybara/rspec'
 
 describe 'Select' do
-  it 'Renders Select components with all the expected furniture' do
+  it 'Renders Select components' do
     visit 'http://components-select-app:3000'
     click_on 'Start'
 

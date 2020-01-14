@@ -1,7 +1,7 @@
 require 'capybara/rspec'
 
 describe 'Checkboxes' do
-  it 'Renders Checkboxes components with all the expected furniture' do
+  it 'Renders Checkboxes components' do
     visit 'http://components-checkboxes-app:3000'
     click_on 'Start'
 
