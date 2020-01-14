@@ -34,17 +34,17 @@ describe 'Number' do
     expect(page).to have_selector '.fb-sectionHeading', text: 'Number - Summary - section heading'
     expect(page).to have_selector 'h1', text: 'Summary'
 
-    expect(page).to have_selector 'h2', text: 'Number - First - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Number - First'
-    expect(page).to have_selector '.govuk-summary-list__value', text: '1'
+    expect(page).to have_selector 'h2:nth-of-type(1)', text: 'Number - First - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__key', text: 'Number - First'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__value', text: '1'
 
-    expect(page).to have_selector 'h2', text: 'Number - Second - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Number - Second'
-    expect(page).to have_selector '.govuk-summary-list__value', text: '2'
+    expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Number - Second - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__key', text: 'Number - Second'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: '2'
 
-    expect(page).to have_selector 'h2', text: 'Number - Third - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Number - Third'
-    expect(page).to have_selector '.govuk-summary-list__value', text: '3'
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Number - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Number - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: '3'
 
     click_on 'Accept and send application'
 

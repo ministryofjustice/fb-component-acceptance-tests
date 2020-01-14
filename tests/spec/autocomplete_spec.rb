@@ -34,17 +34,17 @@ describe 'Autocomplete' do
     expect(page).to have_selector '.fb-sectionHeading', text: 'Autocomplete - Summary - section heading'
     expect(page).to have_selector 'h1', text: 'Summary'
 
-    expect(page).to have_selector 'h2', text: 'Autocomplete - First - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Autocomplete - First'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'One'
+    expect(page).to have_selector 'h2:nth-of-type(1)', text: 'Autocomplete - First - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__key', text: 'Autocomplete - First'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__value', text: 'One'
 
-    expect(page).to have_selector 'h2', text: 'Autocomplete - Second - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Autocomplete - Second'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Two - summary version'
+    expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Autocomplete - Second - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__key', text: 'Autocomplete - Second'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: 'Two - summary version'
 
-    expect(page).to have_selector 'h2', text: 'Autocomplete - Third - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Autocomplete - Third'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Three - summary version'
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Autocomplete - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Autocomplete - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three - summary version'
 
     click_on 'Accept and send application'
 

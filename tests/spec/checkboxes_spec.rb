@@ -45,21 +45,21 @@ describe 'Checkboxes' do
     expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - Summary - section heading'
     expect(page).to have_selector 'h1', text: 'Summary'
 
-    expect(page).to have_selector 'h2', text: 'Checkboxes - First - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Checkboxes - First'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'One'
+    expect(page).to have_selector 'h2:nth-of-type(1)', text: 'Checkboxes - First - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__key', text: 'Checkboxes - First'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__value', text: 'One'
 
-    expect(page).to have_selector 'h2', text: 'Checkboxes - Second - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Checkboxes - Second'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Two'
+    expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Checkboxes - Second - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__key', text: 'Checkboxes - Second'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: 'Two'
 
-    expect(page).to have_selector 'h2', text: 'Checkboxes - Third - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Checkboxes - Third'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Three - summary version'
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Checkboxes - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Checkboxes - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three - summary version'
 
-    expect(page).to have_selector 'h2', text: 'Checkboxes - Fourth - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Checkboxes - Fourth'
-    expect(page).to have_selector '.govuk-summary-list__value', text: /One - summary version\s*Two - summary version\s*Three - summary version\s*Four - summary version/
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Checkboxes - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Checkboxes - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: /One - summary version\s*Two - summary version\s*Three - summary version\s*Four - summary version/
 
     click_on 'Accept and send application'
 

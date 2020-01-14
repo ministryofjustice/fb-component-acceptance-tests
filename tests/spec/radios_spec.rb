@@ -42,21 +42,21 @@ describe 'Radios' do
     expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - Summary - section heading'
     expect(page).to have_selector 'h1', text: 'Summary'
 
-    expect(page).to have_selector 'h2', text: 'Radios - First - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Radios - First'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'One'
+    expect(page).to have_selector 'h2:nth-of-type(1)', text: 'Radios - First - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__key', text: 'Radios - First'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__value', text: 'One'
 
-    expect(page).to have_selector 'h2', text: 'Radios - Second - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Radios - Second'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Two'
+    expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Radios - Second - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__key', text: 'Radios - Second'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: 'Two'
 
-    expect(page).to have_selector 'h2', text: 'Radios - Third - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Radios - Third'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Three - summary version'
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Radios - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Radios - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three - summary version'
 
-    expect(page).to have_selector 'h2', text: 'Radios - Fourth - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Radios - Fourth'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Four - summary version'
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Radios - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Radios - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'Four - summary version'
 
     click_on 'Accept and send application'
 

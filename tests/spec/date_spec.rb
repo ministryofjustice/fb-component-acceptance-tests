@@ -51,21 +51,21 @@ describe 'Date' do
     expect(page).to have_selector '.fb-sectionHeading', text: 'Date - Summary - section heading'
     expect(page).to have_selector 'h1', text: 'Summary'
 
-    expect(page).to have_selector 'h2', text: 'Date - First - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Date - First'
-    expect(page).to have_selector '.govuk-summary-list__value', text: '1 January 1970'
+    expect(page).to have_selector 'h2:nth-of-type(1)', text: 'Date - First - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__key', text: 'Date - First'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__value', text: '1 January 1970'
 
-    expect(page).to have_selector 'h2', text: 'Date - Second - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Date - Second'
-    expect(page).to have_selector '.govuk-summary-list__value', text: '2 February 1971'
+    expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Date - Second - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__key', text: 'Date - Second'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: '2 February 1971'
 
-    expect(page).to have_selector 'h2', text: 'Date - Third - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Date - Third'
-    expect(page).to have_selector '.govuk-summary-list__value', text: '3 March 1972'
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Date - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Date - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: '3 March 1972'
 
-    expect(page).to have_selector 'h2', text: 'Date - Fourth - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Date - Fourth'
-    expect(page).to have_selector '.govuk-summary-list__value', text: '4 April 1973'
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Date - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Date - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: '4 April 1973'
 
     click_on 'Accept and send application'
 

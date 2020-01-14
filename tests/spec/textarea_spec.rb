@@ -34,17 +34,17 @@ describe 'Textarea' do
     expect(page).to have_selector '.fb-sectionHeading', text: 'Textarea - Summary - section heading'
     expect(page).to have_selector 'h1', text: 'Summary'
 
-    expect(page).to have_selector 'h2', text: 'Textarea - First - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Textarea - First'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'One'
+    expect(page).to have_selector 'h2:nth-of-type(1)', text: 'Textarea - First - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__key', text: 'Textarea - First'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__value', text: 'One'
 
-    expect(page).to have_selector 'h2', text: 'Textarea - Second - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Textarea - Second'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Two' # - summary version'
+    expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Textarea - Second - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__key', text: 'Textarea - Second'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: 'Two'
 
-    expect(page).to have_selector 'h2', text: 'Textarea - Third - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Textarea - Third'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Three' # - summary version'
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Textarea - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Textarea - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three'
 
     click_on 'Accept and send application'
 

@@ -34,17 +34,17 @@ describe 'Select' do
     expect(page).to have_selector '.fb-sectionHeading', text: 'Select - Summary - section heading'
     expect(page).to have_selector 'h1', text: 'Summary'
 
-    expect(page).to have_selector 'h2', text: 'Select - First - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Select - First'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'One'
+    expect(page).to have_selector 'h2:nth-of-type(1)', text: 'Select - First - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__key', text: 'Select - First'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__value', text: 'One'
 
-    expect(page).to have_selector 'h2', text: 'Select - Second - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Select - Second'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Two - summary version'
+    expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Select - Second - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__key', text: 'Select - Second'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: 'Two - summary version'
 
-    expect(page).to have_selector 'h2', text: 'Select - Third - section heading'
-    expect(page).to have_selector '.govuk-summary-list__key', text: 'Select - Third'
-    expect(page).to have_selector '.govuk-summary-list__value', text: 'Three - summary version'
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Select - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Select - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three - summary version'
 
     click_on 'Accept and send application'
 
