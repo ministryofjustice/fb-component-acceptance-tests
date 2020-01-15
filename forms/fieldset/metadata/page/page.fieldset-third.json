@@ -54,6 +54,7 @@
               "_type": "checkbox",
               "hint": "Checkbox - One - hint text",
               "label": "One",
+              "labelSummary": "One - summary version",
               "name": "auto_name__26"
             },
             {
@@ -61,6 +62,7 @@
               "_type": "checkbox",
               "hint": "Checkbox - Two - hint text",
               "label": "Two",
+              "labelSummary": "Two - summary version",
               "name": "auto_name__27"
             },
             {
@@ -68,6 +70,7 @@
               "_type": "checkbox",
               "hint": "Checkbox - Three - hint text",
               "label": "Three",
+              "labelSummary": "Three - summary version",
               "name": "auto_name__28"
             },
             {
@@ -75,6 +78,7 @@
               "_type": "checkbox",
               "hint": "Checkbox - Four - hint text",
               "label": "Four",
+              "labelSummary": "Four - summary version",
               "name": "auto_name__29"
             }
           ],
@@ -111,6 +115,7 @@
               "_type": "radio",
               "hint": "Radio - One - hint text",
               "label": "One",
+              "labelSummary": "One - summary version",
               "value": "1"
             },
             {
@@ -118,6 +123,7 @@
               "_type": "radio",
               "hint": "Radio - Two - hint text",
               "label": "Two",
+              "labelSummary": "Two - summary version",
               "value": "2"
             },
             {
@@ -125,6 +131,7 @@
               "_type": "radio",
               "hint": "Radio - Three - hint text",
               "label": "Three",
+              "labelSummary": "Three - summary version",
               "value": "3"
             },
             {
@@ -132,6 +139,7 @@
               "_type": "radio",
               "hint": "Radio - Four - hint text",
               "label": "Four",
+              "labelSummary": "Four - summary version",
               "value": "4"
             }
           ],

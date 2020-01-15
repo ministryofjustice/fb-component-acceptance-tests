@@ -282,7 +282,7 @@ describe 'Fieldset' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: 'Three'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__key', text: 'Checkboxes'
-    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__value', text: 'Three'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__value', text: 'Three - summary version'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__key', text: 'Date'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__value', text: '3 March 1972'
@@ -294,7 +294,7 @@ describe 'Fieldset' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(5) .govuk-summary-list__value', text: '3'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(6) .govuk-summary-list__key', text: 'Radios'
-    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(6) .govuk-summary-list__value', text: 'Three'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(6) .govuk-summary-list__value', text: 'Three - summary version'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(7) .govuk-summary-list__key', text: 'Select'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(7) .govuk-summary-list__value', text: 'Three'
@@ -311,7 +311,7 @@ describe 'Fieldset' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: 'Four'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__key', text: 'Checkboxes'
-    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__value', text: 'Four'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__value', text: 'Four - summary version'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__key', text: 'Date'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__value', text: '4 April 1973'
@@ -323,7 +323,7 @@ describe 'Fieldset' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(5) .govuk-summary-list__value', text: '4'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(6) .govuk-summary-list__key', text: 'Radios'
-    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(6) .govuk-summary-list__value', text: 'Four'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(6) .govuk-summary-list__value', text: 'Four - summary version'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(7) .govuk-summary-list__key', text: 'Select'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(7) .govuk-summary-list__value', text: 'Four'
