@@ -11,7 +11,7 @@ describe 'Radios' do
     expect(page).to have_selector 'h1', text: 'Radios - First'
     expect(page).to have_selector '.govuk-hint', text: 'Radios - First - hint text'
 
-    choose 'auto_name__1', option: 'auto_value__1', visible: false
+    choose 'auto_name__1', option: '1', visible: false
     continue
 
     # radios

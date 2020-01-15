@@ -30,6 +30,14 @@ describe 'Autocomplete' do
     fill_in 'page_autocomplete-third--autocomplete_auto_name_3', with: "Three\n" # the new line "presses enter" on the selected option
     continue
 
+    # autocomplete
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Autocomplete - Fourth - section heading'
+    expect(page).to have_selector 'h1 label.govuk-label', text: 'Autocomplete - Fourth'
+    expect(page).to have_selector '.govuk-hint', text: 'Autocomplete - Fourth - hint text'
+
+    fill_in 'page_autocomplete-fourth--autocomplete_auto_name_4', with: "Four\n" # the new line "presses enter" on the selected option
+    continue
+
     # summary
     expect(page).to have_selector '.fb-sectionHeading', text: 'Autocomplete - Summary - section heading'
     expect(page).to have_selector 'h1', text: 'Summary'
@@ -40,11 +48,15 @@ describe 'Autocomplete' do
 
     expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Autocomplete - Second - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__key', text: 'Autocomplete - Second'
-    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: 'Two - summary version'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: 'Two'
 
     expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Autocomplete - Third - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Autocomplete - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three - summary version'
+
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Autocomplete - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Autocomplete - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'Four - summary version'
 
     click_on 'Accept and send application'
 

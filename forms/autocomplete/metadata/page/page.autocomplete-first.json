@@ -24,6 +24,12 @@
           "_type": "option",
           "text": "Three",
           "value": "3"
+        },
+        {
+          "_id": "page.autocomplete-first--autocomplete.auto_name__1--option--4",
+          "_type": "option",
+          "text": "Four",
+          "value": "4"
         }
       ],
       "label": "Autocomplete - First",

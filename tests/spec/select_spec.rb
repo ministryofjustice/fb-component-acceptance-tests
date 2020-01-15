@@ -30,6 +30,14 @@ describe 'Select' do
     select 'Three', from: 'page_select-third--select_auto_name_3'
     continue
 
+    # select
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Select - Fourth - section heading'
+    expect(page).to have_selector 'h1 label.govuk-label', text: 'Select - Fourth'
+    expect(page).to have_selector '.govuk-hint', text: 'Select - Fourth - hint text'
+
+    select 'Four', from: 'page_select-fourth--select_auto_name_4'
+    continue
+
     # summary
     expect(page).to have_selector '.fb-sectionHeading', text: 'Select - Summary - section heading'
     expect(page).to have_selector 'h1', text: 'Summary'
@@ -40,11 +48,15 @@ describe 'Select' do
 
     expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Select - Second - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__key', text: 'Select - Second'
-    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: 'Two - summary version'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__value', text: 'Two'
 
     expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Select - Third - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Select - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three - summary version'
+
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Select - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Select - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'Four - summary version'
 
     click_on 'Accept and send application'
 

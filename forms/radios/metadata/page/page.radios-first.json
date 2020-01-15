@@ -12,28 +12,28 @@
           "_type": "radio",
           "hint": "One - hint text",
           "label": "One",
-          "value": "auto_value__1"
+          "value": "1"
         },
         {
           "_id": "page.radios-first--radios.auto_name__1--radio.auto_value__2",
           "_type": "radio",
           "hint": "Two - hint text",
           "label": "Two",
-          "value": "auto_value__2"
+          "value": "2"
         },
         {
           "_id": "page.radios-first--radios.auto_name__1--radio.auto_value__3",
           "_type": "radio",
           "hint": "Three - hint text",
           "label": "Three",
-          "value": "auto_value__3"
+          "value": "3"
         },
         {
           "_id": "page.radios-first--radios.auto_name__1--radio.auto_value__4",
           "_type": "radio",
           "hint": "Four - hint text",
           "label": "Four",
-          "value": "auto_value__4"
+          "value": "4"
         }
       ],
       "legend": "Radios - First",

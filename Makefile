@@ -12,6 +12,7 @@ setup: .components .submitter .datastore .filestore  .service-token-cache
 	mkdir -p .components/checkboxes
 	mkdir -p .components/date
 	mkdir -p .components/email
+	mkdir -p .components/fieldset
 	mkdir -p .components/number
 	mkdir -p .components/radios
 	mkdir -p .components/select
@@ -21,6 +22,7 @@ setup: .components .submitter .datastore .filestore  .service-token-cache
 	cp -r .runner/* .components/checkboxes
 	cp -r .runner/* .components/date
 	cp -r .runner/* .components/email
+	cp -r .runner/* .components/fieldset
 	cp -r .runner/* .components/number
 	cp -r .runner/* .components/radios
 	cp -r .runner/* .components/select
@@ -53,6 +55,9 @@ build: stop setup
 	echo HEAD > .components/email/APP_SHA
 	mkdir -p .components/email/form
 	cp -r ./forms/email/* .components/email/form
+	echo HEAD > .components/fieldset/APP_SHA
+	mkdir -p .components/fieldset/form
+	cp -r ./forms/fieldset/* .components/fieldset/form
 	echo HEAD > .components/number/APP_SHA
 	mkdir -p .components/number/form
 	cp -r ./forms/number/* .components/number/form
