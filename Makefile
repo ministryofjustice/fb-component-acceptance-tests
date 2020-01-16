@@ -1,4 +1,4 @@
-setup: .runner .components .submitter .datastore .filestore .pdf-generator .service-token-cache
+setup: .components .submitter .datastore .filestore  .service-token-cache
 
 .datastore:
 	git clone git@github.com:ministryofjustice/fb-user-datastore.git .datastore
@@ -6,66 +6,73 @@ setup: .runner .components .submitter .datastore .filestore .pdf-generator .serv
 .filestore:
 	git clone git@github.com:ministryofjustice/fb-user-filestore.git .filestore
 
-.runner:
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .runner
-
 .components:
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .components/autocomplete
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .components/checkboxes
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .components/date
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .components/email
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .components/number
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .components/radios
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .components/select
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .components/text
-	git clone git@github.com:ministryofjustice/fb-runner-node.git .components/textarea
+	git clone git@github.com:ministryofjustice/fb-runner-node.git .runner
+	mkdir -p .components/autocomplete
+	mkdir -p .components/checkboxes
+	mkdir -p .components/date
+	mkdir -p .components/email
+	mkdir -p .components/fieldset
+	mkdir -p .components/number
+	mkdir -p .components/radios
+	mkdir -p .components/select
+	mkdir -p .components/text
+	mkdir -p .components/textarea
+	cp -r .runner/* .components/autocomplete
+	cp -r .runner/* .components/checkboxes
+	cp -r .runner/* .components/date
+	cp -r .runner/* .components/email
+	cp -r .runner/* .components/fieldset
+	cp -r .runner/* .components/number
+	cp -r .runner/* .components/radios
+	cp -r .runner/* .components/select
+	cp -r .runner/* .components/text
+	cp -r .runner/* .components/textarea
+	rm -rf .runner
 
 .submitter:
 	git clone git@github.com:ministryofjustice/fb-submitter.git .submitter
 
-.pdf-generator:
-	git clone git@github.com:ministryofjustice/fb-pdf-generator.git .pdf-generator
-
 .service-token-cache:
 	git clone git@github.com:ministryofjustice/fb-service-token-cache.git .service-token-cache
 
-destroy: .runner .components .submitter .datastore .filestore .pdf-generator .service-token-cache
+destroy: .components .submitter .datastore .filestore .service-token-cache
 	docker-compose down
 
 stop:
 	docker-compose down
 
 build: stop setup
-	echo HEAD > .runner/APP_SHA
-	mkdir -p .runner/forms
-	cp -r forms/* .runner/forms
 	echo HEAD > .components/autocomplete/APP_SHA
 	mkdir -p .components/autocomplete/form
-	cp -r forms/components/autocomplete/* .components/autocomplete/form
+	cp -r ./forms/autocomplete/* .components/autocomplete/form
 	echo HEAD > .components/checkboxes/APP_SHA
 	mkdir -p .components/checkboxes/form
-	cp -r forms/components/checkboxes/* .components/checkboxes/form
+	cp -r ./forms/checkboxes/* .components/checkboxes/form
 	echo HEAD > .components/date/APP_SHA
 	mkdir -p .components/date/form
-	cp -r forms/components/date/* .components/date/form
+	cp -r ./forms/date/* .components/date/form
 	echo HEAD > .components/email/APP_SHA
 	mkdir -p .components/email/form
-	cp -r forms/components/email/* .components/email/form
+	cp -r ./forms/email/* .components/email/form
+	echo HEAD > .components/fieldset/APP_SHA
+	mkdir -p .components/fieldset/form
+	cp -r ./forms/fieldset/* .components/fieldset/form
 	echo HEAD > .components/number/APP_SHA
 	mkdir -p .components/number/form
-	cp -r forms/components/number/* .components/number/form
+	cp -r ./forms/number/* .components/number/form
 	echo HEAD > .components/radios/APP_SHA
 	mkdir -p .components/radios/form
-	cp -r forms/components/radios/* .components/radios/form
+	cp -r ./forms/radios/* .components/radios/form
 	echo HEAD > .components/select/APP_SHA
 	mkdir -p .components/select/form
-	cp -r forms/components/select/* .components/select/form
+	cp -r ./forms/select/* .components/select/form
 	echo HEAD > .components/text/APP_SHA
 	mkdir -p .components/text/form
-	cp -r forms/components/text/* .components/text/form
+	cp -r ./forms/text/* .components/text/form
 	echo HEAD > .components/textarea/APP_SHA
 	mkdir -p .components/textarea/form
-	cp -r forms/components/textarea/* .components/textarea/form
+	cp -r ./forms/textarea/* .components/textarea/form
 	docker-compose build --parallel
 
 serve: build
@@ -74,7 +81,7 @@ serve: build
 	./scripts/setup_test_env.sh
 
 spec: serve
-	docker-compose run acceptance-tests bundle exec rspec
+	docker-compose run tests bundle exec rspec
 
 clean:
-	rm -fr .runner .components .submitter .datastore .filestore .pdf-generator .service-token-cache
+	rm -rf .components .submitter .datastore .filestore .service-token-cache

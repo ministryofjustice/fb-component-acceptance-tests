@@ -1,11 +1,7 @@
 .DS_Store
-.av
-.publisher
 .submitter
-.token-cache
 .filestore
 .datastore
-.runner
-.pdf-generator
 .service-token-cache
+.runner
 .components
