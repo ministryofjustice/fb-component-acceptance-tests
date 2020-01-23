@@ -72,7 +72,6 @@ describe 'Upload' do
 
     expect(page).to have_selector '.fb-sectionHeading', text: 'Upload - Fourth - section heading'
     expect(page).to have_selector 'h1', text: 'Upload - Fourth - Summary'
-
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Upload - Fourth'
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: '1.jpg, 1.34MB'
 
@@ -91,10 +90,6 @@ describe 'Upload' do
 
     expect(page).to have_selector '.fb-sectionHeading', text: 'Upload - Fourth - section heading'
     expect(page).to have_selector 'h1', text: 'Upload - Fourth - Summary'
-
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Upload - Fourth'
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: '1.jpg, 1.34MB'
-
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__key', text: 'Upload - Fourth'
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__value', text: '2.jpg, 1.34MB'
 
@@ -113,10 +108,6 @@ describe 'Upload' do
 
     expect(page).to have_selector '.fb-sectionHeading', text: 'Upload - Fourth - section heading'
     expect(page).to have_selector 'h1', text: 'Upload - Fourth - Summary'
-
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Upload - Fourth'
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: '1.jpg, 1.34MB'
-
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__key', text: 'Upload - Fourth'
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__value', text: '3.jpg, 1.34MB'
 
@@ -140,7 +131,6 @@ describe 'Upload' do
 
     expect(page).to have_selector '.fb-sectionHeading', text: 'Upload - Fifth - section heading'
     expect(page).to have_selector 'h1', text: 'Upload - Fifth - Summary'
-
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Upload - Fifth'
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: '1.jpg, 1.34MB'
 
@@ -159,10 +149,6 @@ describe 'Upload' do
 
     expect(page).to have_selector '.fb-sectionHeading', text: 'Upload - Fifth - section heading'
     expect(page).to have_selector 'h1', text: 'Upload - Fifth - Summary'
-
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Upload - Fifth'
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: '1.jpg, 1.34MB'
-
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__key', text: 'Upload - Fifth'
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__value', text: '2.jpg, 1.34MB'
 
@@ -181,10 +167,6 @@ describe 'Upload' do
 
     expect(page).to have_selector '.fb-sectionHeading', text: 'Upload - Fifth - section heading'
     expect(page).to have_selector 'h1', text: 'Upload - Fifth - Summary'
-
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Upload - Fifth'
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: '1.jpg, 1.34MB'
-
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__key', text: 'Upload - Fifth'
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__value', text: '3.jpg, 1.34MB'
 
@@ -208,7 +190,6 @@ describe 'Upload' do
 
     expect(page).to have_selector '.fb-sectionHeading', text: 'Upload - Sixth - section heading'
     expect(page).to have_selector 'h1', text: 'Upload - Sixth - Summary'
-
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Upload - Sixth'
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: '1.jpg, 1.34MB'
 
@@ -227,10 +208,6 @@ describe 'Upload' do
 
     expect(page).to have_selector '.fb-sectionHeading', text: 'Upload - Sixth - section heading'
     expect(page).to have_selector 'h1', text: 'Upload - Sixth - Summary'
-
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Upload - Sixth'
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: '1.jpg, 1.34MB'
-
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__key', text: 'Upload - Sixth'
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__value', text: '2.jpg, 1.34MB'
 
@@ -249,10 +226,6 @@ describe 'Upload' do
 
     expect(page).to have_selector '.fb-sectionHeading', text: 'Upload - Sixth - section heading'
     expect(page).to have_selector 'h1', text: 'Upload - Sixth - Summary'
-
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Upload - Sixth'
-    expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: '1.jpg, 1.34MB'
-
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__key', text: 'Upload - Sixth'
     expect(page).to have_selector '.govuk-summary-list .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__value', text: '3.jpg, 1.34MB'
 
