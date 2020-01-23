@@ -31,6 +31,7 @@ make-components:
 	mkdir -p .components/select
 	mkdir -p .components/text
 	mkdir -p .components/textarea
+	mkdir -p .components/upload
 
 copy-components:
 	cp -r .runner/* .components/autocomplete
@@ -43,6 +44,7 @@ copy-components:
 	cp -r .runner/* .components/select
 	cp -r .runner/* .components/text
 	cp -r .runner/* .components/textarea
+	cp -r .runner/* .components/upload
 
 stop:
 	docker-compose down
@@ -78,6 +80,9 @@ build: stop setup
 	echo HEAD > .components/textarea/APP_SHA
 	mkdir -p .components/textarea/form
 	cp -r ./forms/textarea/* .components/textarea/form
+	echo HEAD > .components/upload/APP_SHA
+	mkdir -p .components/upload/form
+	cp -r ./forms/upload/* .components/upload/form
 	docker-compose build --parallel
 
 serve: build

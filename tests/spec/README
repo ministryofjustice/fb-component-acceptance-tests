@@ -1,8 +1,8 @@
 Autocomplete - Automated
-1 - Component label label and option label and value
-2 - Component label label and component label summary version and option label and value
-3 - Component label label and component label summary version and option label and value with option text summary version
-3 - Component label label and component label summary version and option label and value with option text summary version and input name
+1 - Component label and option label and value
+2 - Component label and component label summary version and option label and value
+3 - Component label and component label summary version and option label and value with option text summary version
+3 - Component label and component label summary version and option label and value with option text summary version and input name
 
 Checkboxes - Automated
 1 - Option label
@@ -33,10 +33,10 @@ Radios - Automated
 4 - Option label and value with option summary version and input name
 
 Select - Automated
-1 - Component label label and option label and value
-2 - Component label label and component label summary version and option label and value
-3 - Component label label and component label summary version and option label and value with option text summary version
-3 - Component label label and component label summary version and option label and value with option text summary version and input name
+1 - Component label and option label and value
+2 - Component label and component label summary version and option label and value
+3 - Component label and component label summary version and option label and value with option text summary version
+3 - Component label and component label summary version and option label and value with option text summary version and input name
 
 Text - Automated
 1 - Input label
@@ -47,3 +47,11 @@ Textarea - Automated
 1 - Input label
 2 - Input label with label summary version
 3 - Input label with label summary version and input name
+
+Upload - Automated
+1 - Component label
+2 - Component label and component label summary version and
+3 - Component label and component label summary version and input name
+4 - Component label
+5 - Component label and component label summary version and
+6 - Component label and component label summary version and input name
