@@ -1,4 +1,4 @@
-setup: .components .submitter .datastore .filestore  .service-token-cache
+setup: .runner .components .submitter .datastore .filestore  .service-token-cache
 
 .datastore:
 	git clone git@github.com:ministryofjustice/fb-user-datastore.git .datastore
@@ -6,8 +6,21 @@ setup: .components .submitter .datastore .filestore  .service-token-cache
 .filestore:
 	git clone git@github.com:ministryofjustice/fb-user-filestore.git .filestore
 
-.components:
+.components: make-components copy-components
+
+.runner:
 	git clone git@github.com:ministryofjustice/fb-runner-node.git .runner
+
+.submitter:
+	git clone git@github.com:ministryofjustice/fb-submitter.git .submitter
+
+.service-token-cache:
+	git clone git@github.com:ministryofjustice/fb-service-token-cache.git .service-token-cache
+
+destroy: .runner .components .submitter .datastore .filestore .service-token-cache
+	docker-compose down
+
+make-components:
 	mkdir -p .components/autocomplete
 	mkdir -p .components/checkboxes
 	mkdir -p .components/date
@@ -18,6 +31,8 @@ setup: .components .submitter .datastore .filestore  .service-token-cache
 	mkdir -p .components/select
 	mkdir -p .components/text
 	mkdir -p .components/textarea
+
+copy-components:
 	cp -r .runner/* .components/autocomplete
 	cp -r .runner/* .components/checkboxes
 	cp -r .runner/* .components/date
@@ -28,16 +43,6 @@ setup: .components .submitter .datastore .filestore  .service-token-cache
 	cp -r .runner/* .components/select
 	cp -r .runner/* .components/text
 	cp -r .runner/* .components/textarea
-	rm -rf .runner
-
-.submitter:
-	git clone git@github.com:ministryofjustice/fb-submitter.git .submitter
-
-.service-token-cache:
-	git clone git@github.com:ministryofjustice/fb-service-token-cache.git .service-token-cache
-
-destroy: .components .submitter .datastore .filestore .service-token-cache
-	docker-compose down
 
 stop:
 	docker-compose down
@@ -80,8 +85,8 @@ serve: build
 	./scripts/wait_for_apps.sh
 	./scripts/setup_test_env.sh
 
-spec: serve
+spec: .components serve
 	docker-compose run tests bundle exec rspec
 
 clean:
-	rm -rf .components .submitter .datastore .filestore .service-token-cache
+	rm -rf .runner .components .submitter .datastore .filestore .service-token-cache
