@@ -2,7 +2,7 @@ Autocomplete - Automated
 1 - Component label and option label and value
 2 - Component label and component label summary version and option label and value
 3 - Component label and component label summary version and option label and value with option text summary version
-3 - Component label and component label summary version and option label and value with option text summary version and input name
+4 - Component label and component label summary version and option label and value with option text summary version and input name
 
 Checkboxes - Automated
 1 - Option label
@@ -36,7 +36,7 @@ Select - Automated
 1 - Component label and option label and value
 2 - Component label and component label summary version and option label and value
 3 - Component label and component label summary version and option label and value with option text summary version
-3 - Component label and component label summary version and option label and value with option text summary version and input name
+4 - Component label and component label summary version and option label and value with option text summary version and input name
 
 Text - Automated
 1 - Input label
@@ -50,8 +50,8 @@ Textarea - Automated
 
 Upload - Automated
 1 - Component label
-2 - Component label and component label summary version and
+2 - Component label and component label summary version
 3 - Component label and component label summary version and input name
 4 - Component label
-5 - Component label and component label summary version and
+5 - Component label and component label summary version
 6 - Component label and component label summary version and input name
