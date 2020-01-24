@@ -30,6 +30,7 @@ You can visit ports on localhost to see the component forms.
 - http://localhost:3087 Select
 - http://localhost:3088 Text
 - http://localhost:3089 Textarea
+- http://localhost:3090 Upload
 
 ### Run acceptance specs
 
