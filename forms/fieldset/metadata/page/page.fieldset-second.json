@@ -185,11 +185,21 @@
           "hint": "Textarea - Second - hint text",
           "label": "Textarea",
           "name": "auto_name__24"
+        },
+        {
+          "_id": "page.fieldset-first--fieldset--upload.auto_name__25",
+          "_type": "upload",
+          "hint": "Upload - Second - hint text",
+          "label": "Upload",
+          "name": "auto_name__25"
         }
       ],
       "legend": "Fieldset - Second"
     }
   ],
   "sectionHeading": "Fieldset - Second - section heading",
-  "url": "fieldset-second"
+  "url": "fieldset-second",
+  "steps": [
+    "page.fieldset-second-check"
+  ]
 }

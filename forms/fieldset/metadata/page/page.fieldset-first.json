@@ -179,11 +179,21 @@
           "hint": "Textarea - First - hint text",
           "label": "Textarea",
           "name": "auto_name__12"
+        },
+        {
+          "_id": "page.fieldset-first--fieldset--upload.auto_name__13",
+          "_type": "upload",
+          "hint": "Upload - First - hint text",
+          "label": "Upload",
+          "name": "auto_name__13"
         }
       ],
       "legend": "Fieldset - First"
     }
   ],
   "sectionHeading": "Fieldset - First - section heading",
-  "url": "fieldset-first"
+  "url": "fieldset-first",
+  "steps": [
+    "page.fieldset-first-check"
+  ]
 }

@@ -56,6 +56,16 @@ describe 'Fieldset' do
 
     fill_in 'page_fieldset-first--fieldset--textarea_auto_name_12', with: "One"
 
+    # upload
+    attach_file('auto_name__13[1]', 'spec/fixtures/files/1.jpg')
+
+    continue
+
+    expect(page).to have_selector 'h1', text: 'Fieldset - First - Check'
+    expect(page).to have_selector '.fb-upload-descriptions', text: '1.jpg, 1.34MB'
+
+    # radios
+    choose 'decision', option: 'accept', visible: false
     continue
 
     # autocomplete
@@ -108,6 +118,16 @@ describe 'Fieldset' do
 
     fill_in 'page_fieldset-second--fieldset--textarea_auto_name_24', with: "Two"
 
+    # upload
+    attach_file('auto_name__25[1]', 'spec/fixtures/files/2.jpg')
+
+    continue
+
+    expect(page).to have_selector 'h1', text: 'Fieldset - Second - Check'
+    expect(page).to have_selector '.fb-upload-descriptions', text: '2.jpg, 1.34MB'
+
+    # radios
+    choose 'decision', option: 'accept', visible: false
     continue
 
     # autocomplete
@@ -160,6 +180,16 @@ describe 'Fieldset' do
 
     fill_in 'page_fieldset-third--fieldset--textarea_auto_name_36', with: "Three"
 
+    # upload
+    attach_file('auto_name__37[1]', 'spec/fixtures/files/3.jpg')
+
+    continue
+
+    expect(page).to have_selector 'h1', text: 'Fieldset - Third - Check'
+    expect(page).to have_selector '.fb-upload-descriptions', text: '3.jpg, 1.34MB'
+
+    # radios
+    choose 'decision', option: 'accept', visible: false
     continue
 
     # autocomplete
@@ -212,6 +242,16 @@ describe 'Fieldset' do
 
     fill_in 'page_fieldset-fourth--fieldset--textarea_auto_name_48', with: "Four"
 
+    # upload
+    attach_file('auto_name__49[1]', 'spec/fixtures/files/4.jpg')
+
+    continue
+
+    expect(page).to have_selector 'h1', text: 'Fieldset - Fourth - Check'
+    expect(page).to have_selector '.fb-upload-descriptions', text: '4.jpg, 1.34MB'
+
+    # radios
+    choose 'decision', option: 'accept', visible: false
     continue
 
     # summary
@@ -247,6 +287,9 @@ describe 'Fieldset' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__key', text: 'Textarea'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__value', text: 'One'
 
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__key', text: 'Upload'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(1) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__value', text: '1.jpg (1.34MB)'
+
     expect(page).to have_selector 'h2:nth-of-type(2)', text: 'Fieldset - Second - section heading'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Autocomplete'
@@ -275,6 +318,9 @@ describe 'Fieldset' do
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__key', text: 'Textarea'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__value', text: 'Two'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__key', text: 'Upload'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(2) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__value', text: '2.jpg (1.34MB)'
 
     expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Fieldset - Third - section heading'
 
@@ -305,6 +351,9 @@ describe 'Fieldset' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__key', text: 'Textarea'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__value', text: 'Three'
 
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__key', text: 'Upload'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__value', text: '3.jpg (1.34MB)'
+
     expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Fieldset - Fourth - section heading'
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Autocomplete'
@@ -333,6 +382,9 @@ describe 'Fieldset' do
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__key', text: 'Textarea'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__value', text: 'Four'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__key', text: 'Upload'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__value', text: '4.jpg (1.34MB)'
 
     click_on 'Accept and send application'
 

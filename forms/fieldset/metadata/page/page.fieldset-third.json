@@ -197,11 +197,21 @@
           "hint": "Textarea - Third - hint text",
           "label": "Textarea",
           "name": "auto_name__36"
+        },
+        {
+          "_id": "page.fieldset-first--fieldset--upload.auto_name__37",
+          "_type": "upload",
+          "hint": "Upload - Third - hint text",
+          "label": "Upload",
+          "name": "auto_name__37"
         }
       ],
       "legend": "Fieldset - Third"
     }
   ],
   "sectionHeading": "Fieldset - Third - section heading",
-  "url": "fieldset-third"
+  "url": "fieldset-third",
+  "steps": [
+    "page.fieldset-third-check"
+  ]
 }
