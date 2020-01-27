@@ -58,6 +58,22 @@ describe 'Select' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Select - Fourth'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'Four - summary version'
 
+    # Change
+    find('.govuk-summary-list:nth-of-type(4) .govuk-summary-list__actions a').click
+
+    # select
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Select - Fourth - section heading'
+    expect(page).to have_selector 'h1 label.govuk-label', text: 'Select - Fourth'
+    expect(page).to have_selector '.govuk-hint', text: 'Select - Fourth - hint text'
+
+    select 'One', from: 'page_select-fourth--select_auto_name_4'
+    continue
+
+    # summary
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Select - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Select - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'One - summary version'
+
     click_on 'Accept and send application'
 
     # confirmation

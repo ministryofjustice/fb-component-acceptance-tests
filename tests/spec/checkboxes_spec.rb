@@ -61,6 +61,24 @@ describe 'Checkboxes' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Checkboxes - Fourth'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: /One - summary version\s*Two - summary version\s*Three - summary version\s*Four - summary version/
 
+    # Change
+    find('.govuk-summary-list:nth-of-type(4) .govuk-summary-list__actions a').click
+
+    # checkboxes
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - Fourth - section heading'
+    expect(page).to have_selector 'h1', text: 'Checkboxes - Fourth'
+    expect(page).to have_selector '.govuk-hint', text: 'Checkboxes - Fourth - hint text'
+
+    check 'checkboxes-one', visible: false
+    check 'checkboxes-two', visible: false
+    check 'checkboxes-three', visible: false
+    continue
+
+    # summary
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Checkboxes - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Checkboxes - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'Four - summary version'
+
     click_on 'Accept and send application'
 
     # confirmation

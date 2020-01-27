@@ -46,6 +46,22 @@ describe 'Text' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Text - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three'
 
+    # Change
+    find('.govuk-summary-list:nth-of-type(3) .govuk-summary-list__actions a').click
+
+    # text
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Text - Third - section heading'
+    expect(page).to have_selector 'h1 label.govuk-label', text: 'Text - Third'
+    expect(page).to have_selector '.govuk-hint', text: 'Text - Third - hint text'
+
+    fill_in 'text-third', with: "One"
+    continue
+
+    # summary
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Text - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Text - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'One'
+
     click_on 'Accept and send application'
 
     # confirmation
