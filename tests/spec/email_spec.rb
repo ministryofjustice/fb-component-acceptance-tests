@@ -46,6 +46,22 @@ describe 'Email' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Email - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'form-builder-developers@digital.justice.gov.uk'
 
+    # Change
+    find('.govuk-summary-list:nth-of-type(3) .govuk-summary-list__actions a').click
+
+    # email
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Email - Third - section heading'
+    expect(page).to have_selector 'h1 label.govuk-label', text: 'Email - Third'
+    expect(page).to have_selector '.govuk-hint', text: 'Email - Third - hint text'
+
+    fill_in 'email-third', with: "form-builder-team@digital.justice.gov.uk"
+    continue
+
+    # summary
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Email - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Email - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'form-builder-team@digital.justice.gov.uk'
+
     click_on 'Accept and send application'
 
     # confirmation

@@ -58,6 +58,22 @@ describe 'Autocomplete' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Autocomplete - Fourth'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'Four - summary version'
 
+    # Change
+    find('.govuk-summary-list:nth-of-type(4) .govuk-summary-list__actions a').click
+
+    # autocomplete
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Autocomplete - Fourth - section heading'
+    expect(page).to have_selector 'h1 label.govuk-label', text: 'Autocomplete - Fourth'
+    expect(page).to have_selector '.govuk-hint', text: 'Autocomplete - Fourth - hint text'
+
+    fill_in 'page_autocomplete-fourth--autocomplete_auto_name_4', with: "One\n" # the new line 'presses enter' on the selected option
+    continue
+
+    # summary
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Autocomplete - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Autocomplete - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'One - summary version'
+
     click_on 'Accept and send application'
 
     # confirmation

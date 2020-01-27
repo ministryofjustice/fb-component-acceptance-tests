@@ -12,7 +12,7 @@ describe 'Fieldset' do
 
     expect(page).to have_selector '.govuk-hint', text: 'Autocomplete - First - hint text'
 
-    fill_in 'page_fieldset-first--fieldset--autocomplete_auto_name_1', with: "One\n" # the new line "presses enter" on the selected option
+    fill_in 'page_fieldset-first--fieldset--autocomplete_auto_name_1', with: "One\n" # the new line 'presses enter' on the selected option
 
     # checkboxes
     expect(page).to have_selector '.govuk-hint', text: 'Checkboxes - First - hint text'
@@ -22,9 +22,9 @@ describe 'Fieldset' do
     # date
     expect(page).to have_selector '.govuk-hint', text: 'Date - First - hint text'
 
-    fill_in 'COMPOSITE--auto_name_6-day', with: '1'
-    fill_in 'COMPOSITE--auto_name_6-month', with: '1'
-    fill_in 'COMPOSITE--auto_name_6-year', with: '1970'
+    fill_in 'COMPOSITE--auto_name_6-day', with: "1"
+    fill_in 'COMPOSITE--auto_name_6-month', with: "1"
+    fill_in 'COMPOSITE--auto_name_6-year', with: "1970"
 
     # email
     expect(page).to have_selector '.govuk-hint', text: 'Email - First - hint text'
@@ -74,7 +74,7 @@ describe 'Fieldset' do
 
     expect(page).to have_selector '.govuk-hint', text: 'Autocomplete - Second - hint text'
 
-    fill_in 'page_fieldset-second--fieldset--autocomplete_auto_name_13', with: "Two\n" # the new line "presses enter" on the selected option
+    fill_in 'page_fieldset-second--fieldset--autocomplete_auto_name_13', with: "Two\n" # the new line 'presses enter' on the selected option
 
     # checkboxes
     expect(page).to have_selector '.govuk-hint', text: 'Checkboxes - Second - hint text'
@@ -84,9 +84,9 @@ describe 'Fieldset' do
     # date
     expect(page).to have_selector '.govuk-hint', text: 'Date - Second - hint text'
 
-    fill_in 'COMPOSITE--auto_name_18-day', with: '2'
-    fill_in 'COMPOSITE--auto_name_18-month', with: '2'
-    fill_in 'COMPOSITE--auto_name_18-year', with: '1971'
+    fill_in 'COMPOSITE--auto_name_18-day', with: "2"
+    fill_in 'COMPOSITE--auto_name_18-month', with: "2"
+    fill_in 'COMPOSITE--auto_name_18-year', with: "1971"
 
     # email
     expect(page).to have_selector '.govuk-hint', text: 'Email - Second - hint text'
@@ -136,7 +136,7 @@ describe 'Fieldset' do
 
     expect(page).to have_selector '.govuk-hint', text: 'Autocomplete - Third - hint text'
 
-    fill_in 'page_fieldset-third--fieldset--autocomplete_auto_name_25', with: "Three\n" # the new line "presses enter" on the selected option
+    fill_in 'page_fieldset-third--fieldset--autocomplete_auto_name_25', with: "Three\n" # the new line 'presses enter' on the selected option
 
     # checkboxes
     expect(page).to have_selector '.govuk-hint', text: 'Checkboxes - Third - hint text'
@@ -146,9 +146,9 @@ describe 'Fieldset' do
     # date
     expect(page).to have_selector '.govuk-hint', text: 'Date - Third - hint text'
 
-    fill_in 'COMPOSITE--auto_name_30-day', with: '3'
-    fill_in 'COMPOSITE--auto_name_30-month', with: '3'
-    fill_in 'COMPOSITE--auto_name_30-year', with: '1972'
+    fill_in 'COMPOSITE--auto_name_30-day', with: "3"
+    fill_in 'COMPOSITE--auto_name_30-month', with: "3"
+    fill_in 'COMPOSITE--auto_name_30-year', with: "1972"
 
     # email
     expect(page).to have_selector '.govuk-hint', text: 'Email - Third - hint text'
@@ -198,7 +198,7 @@ describe 'Fieldset' do
 
     expect(page).to have_selector '.govuk-hint', text: 'Autocomplete - Fourth - hint text'
 
-    fill_in 'page_fieldset-fourth--fieldset--autocomplete_auto_name_37', with: "Four\n" # the new line "presses enter" on the selected option
+    fill_in 'page_fieldset-fourth--fieldset--autocomplete_auto_name_37', with: "Four\n" # the new line 'presses enter' on the selected option
 
     # checkboxes
     expect(page).to have_selector '.govuk-hint', text: 'Checkboxes - Fourth - hint text'
@@ -208,9 +208,9 @@ describe 'Fieldset' do
     # date
     expect(page).to have_selector '.govuk-hint', text: 'Date - Fourth - hint text'
 
-    fill_in 'COMPOSITE--auto_name_42-day', with: '4'
-    fill_in 'COMPOSITE--auto_name_42-month', with: '4'
-    fill_in 'COMPOSITE--auto_name_42-year', with: '1973'
+    fill_in 'COMPOSITE--auto_name_42-day', with: "4"
+    fill_in 'COMPOSITE--auto_name_42-month', with: "4"
+    fill_in 'COMPOSITE--auto_name_42-year', with: "1973"
 
     # email
     expect(page).to have_selector '.govuk-hint', text: 'Email - Fourth - hint text'
@@ -385,6 +385,105 @@ describe 'Fieldset' do
 
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__key', text: 'Upload'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__value', text: '4.jpg (1.34MB)'
+
+    # Change
+    find('.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__actions a').click
+
+    # autocomplete
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Fieldset - Fourth - section heading'
+    expect(page).to have_selector 'h1', text: 'Fieldset - Fourth'
+
+    expect(page).to have_selector '.govuk-hint', text: 'Autocomplete - Fourth - hint text'
+
+    fill_in 'page_fieldset-fourth--fieldset--autocomplete_auto_name_37', with: "One\n" # the new line 'presses enter' on the selected option
+
+    # checkboxes
+    expect(page).to have_selector '.govuk-hint', text: 'Checkboxes - Fourth - hint text'
+
+    check 'auto_name__38', visible: false
+    check 'auto_name__39', visible: false
+    check 'auto_name__40', visible: false
+
+    # date
+    expect(page).to have_selector '.govuk-hint', text: 'Date - Fourth - hint text'
+
+    fill_in 'COMPOSITE--auto_name_42-day', with: "1"
+    fill_in 'COMPOSITE--auto_name_42-month', with: "1"
+    fill_in 'COMPOSITE--auto_name_42-year', with: "1970"
+
+    # email
+    expect(page).to have_selector '.govuk-hint', text: 'Email - Fourth - hint text'
+
+    fill_in 'page_fieldset-fourth--fieldset--email_auto_name_43', with: "form-builder-team@digital.justice.gov.uk"
+
+    # number
+    expect(page).to have_selector '.govuk-hint', text: 'Number - Fourth - hint text'
+
+    fill_in 'page_fieldset-fourth--fieldset--number_auto_name_44', with: "1"
+
+    # radios
+    expect(page).to have_selector '.govuk-hint', text: 'Radios - Fourth - hint text'
+
+    choose 'auto_name__45', option: '1', visible: false
+
+    # select
+    expect(page).to have_selector '.govuk-hint', text: 'Select - Fourth - hint text'
+
+    select 'One', from: 'page_fieldset-fourth--fieldset--select_auto_name_46'
+
+    # text
+    expect(page).to have_selector '.govuk-hint', text: 'Text - Fourth - hint text'
+
+    fill_in 'page_fieldset-fourth--fieldset--text_auto_name_47', with: "One"
+
+    # textarea
+    expect(page).to have_selector '.govuk-hint', text: 'Textarea - Fourth - hint text'
+
+    fill_in 'page_fieldset-fourth--fieldset--textarea_auto_name_48', with: "One"
+
+    # upload
+    attach_file('auto_name__49[1]', 'spec/fixtures/files/1.jpg')
+
+    continue
+
+    expect(page).to have_selector 'h1', text: 'Fieldset - Fourth - Check'
+    expect(page).to have_selector '.fb-upload-descriptions', text: '1.jpg, 1.34MB'
+
+    # radios
+    choose 'decision', option: 'accept', visible: false
+    continue
+
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Fieldset - Fourth - section heading'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__key', text: 'Autocomplete'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(1) .govuk-summary-list__value', text: 'One'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__key', text: 'Checkboxes'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(2) .govuk-summary-list__value', text: /One - summary version\s*Two - summary version\s*Three - summary version\s*Four - summary version/
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__key', text: 'Date'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(3) .govuk-summary-list__value', text: '1 January 1970'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(4) .govuk-summary-list__key', text: 'Email'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(4) .govuk-summary-list__value', text: 'form-builder-team@digital.justice.gov.uk'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(5) .govuk-summary-list__key', text: 'Number'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(5) .govuk-summary-list__value', text: '1'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(6) .govuk-summary-list__key', text: 'Radios'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(6) .govuk-summary-list__value', text: 'One - summary version'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(7) .govuk-summary-list__key', text: 'Select'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(7) .govuk-summary-list__value', text: 'One'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(8) .govuk-summary-list__key', text: 'Text'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(8) .govuk-summary-list__value', text: 'One'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__key', text: 'Textarea'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(9) .govuk-summary-list__value', text: 'One'
+
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__key', text: 'Upload'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__row:nth-of-type(10) .govuk-summary-list__value', text: '1.jpg (1.34MB)'
 
     click_on 'Accept and send application'
 

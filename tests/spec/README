@@ -52,6 +52,6 @@ Upload - Automated
 1 - Component label
 2 - Component label and component label summary version
 3 - Component label and component label summary version and input name
-4 - Component label
-5 - Component label and component label summary version
-6 - Component label and component label summary version and input name
+4 - Component label, max files 3
+5 - Component label and component label summary version, max files 3
+6 - Component label and component label summary version and input name, max files 3

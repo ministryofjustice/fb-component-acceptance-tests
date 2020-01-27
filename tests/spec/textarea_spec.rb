@@ -46,6 +46,22 @@ describe 'Textarea' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Textarea - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three'
 
+    # Change
+    find('.govuk-summary-list:nth-of-type(3) .govuk-summary-list__actions a').click
+
+    # textarea
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Textarea - Third - section heading'
+    expect(page).to have_selector 'h1 label.govuk-label', text: 'Textarea - Third'
+    expect(page).to have_selector '.govuk-hint', text: 'Textarea - Third - hint text'
+
+    fill_in 'textarea-third', with: "One"
+    continue
+
+    # summary
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Textarea - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Textarea - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'One'
+
     click_on 'Accept and send application'
 
     # confirmation

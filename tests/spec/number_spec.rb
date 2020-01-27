@@ -46,6 +46,22 @@ describe 'Number' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Number - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: '3'
 
+    # Change
+    find('.govuk-summary-list:nth-of-type(3) .govuk-summary-list__actions a').click
+
+    # number
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Number - Third - section heading'
+    expect(page).to have_selector 'h1 label.govuk-label', text: 'Number - Third'
+    expect(page).to have_selector '.govuk-hint', text: 'Number - Third - hint text'
+
+    fill_in 'number-third', with: "1"
+    continue
+
+    # summary
+    expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Number - Third - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Number - Third'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: '1'
+
     click_on 'Accept and send application'
 
     # confirmation

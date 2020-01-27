@@ -11,9 +11,9 @@ describe 'Date' do
     expect(page).to have_selector 'h1', text: 'Date - First'
     expect(page).to have_selector '.govuk-hint', text: 'Date - First - hint text'
 
-    fill_in 'COMPOSITE--auto_name_1-day', with: '1'
-    fill_in 'COMPOSITE--auto_name_1-month', with: '1'
-    fill_in 'COMPOSITE--auto_name_1-year', with: '1970'
+    fill_in 'COMPOSITE--auto_name_1-day', with: "1"
+    fill_in 'COMPOSITE--auto_name_1-month', with: "1"
+    fill_in 'COMPOSITE--auto_name_1-year', with: "1970"
 
     continue
 
@@ -22,9 +22,9 @@ describe 'Date' do
     expect(page).to have_selector 'h1', text: 'Date - Second'
     expect(page).to have_selector '.govuk-hint', text: 'Date - Second - hint text'
 
-    fill_in 'COMPOSITE--auto_name_2-day', with: '2'
-    fill_in 'COMPOSITE--auto_name_2-month', with: '2'
-    fill_in 'COMPOSITE--auto_name_2-year', with: '1971'
+    fill_in 'COMPOSITE--auto_name_2-day', with: "2"
+    fill_in 'COMPOSITE--auto_name_2-month', with: "2"
+    fill_in 'COMPOSITE--auto_name_2-year', with: "1971"
     continue
 
     # date
@@ -32,19 +32,19 @@ describe 'Date' do
     expect(page).to have_selector 'h1', text: 'Date - Third'
     expect(page).to have_selector '.govuk-hint', text: 'Date - Third - hint text'
 
-    fill_in 'COMPOSITE--auto_name_3-day', with: '3'
-    fill_in 'COMPOSITE--auto_name_3-month', with: '3'
-    fill_in 'COMPOSITE--auto_name_3-year', with: '1972'
+    fill_in 'COMPOSITE--auto_name_3-day', with: "3"
+    fill_in 'COMPOSITE--auto_name_3-month', with: "3"
+    fill_in 'COMPOSITE--auto_name_3-year', with: "1972"
     continue
 
-   # date
+    # date
     expect(page).to have_selector '.fb-sectionHeading', text: 'Date - Fourth - section heading'
     expect(page).to have_selector 'h1', text: 'Date - Fourth'
     expect(page).to have_selector '.govuk-hint', text: 'Date - Fourth - hint text'
 
-    fill_in 'COMPOSITE--date-fourth-day', with: '4'
-    fill_in 'COMPOSITE--date-fourth-month', with: '4'
-    fill_in 'COMPOSITE--date-fourth-year', with: '1973'
+    fill_in 'COMPOSITE--date-fourth-day', with: "4"
+    fill_in 'COMPOSITE--date-fourth-month', with: "4"
+    fill_in 'COMPOSITE--date-fourth-year', with: "1973"
     continue
 
     # summary
@@ -66,6 +66,23 @@ describe 'Date' do
     expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Date - Fourth - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Date - Fourth'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: '4 April 1973'
+
+    # Change
+    find('.govuk-summary-list:nth-of-type(4) .govuk-summary-list__actions a').click
+
+    # date
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Date - Fourth - section heading'
+    expect(page).to have_selector 'h1', text: 'Date - Fourth'
+    expect(page).to have_selector '.govuk-hint', text: 'Date - Fourth - hint text'
+
+    fill_in 'COMPOSITE--date-fourth-day', with: "1"
+    fill_in 'COMPOSITE--date-fourth-month', with: "1"
+    fill_in 'COMPOSITE--date-fourth-year', with: "1970"
+    continue
+
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Date - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Date - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: '1 January 1970'
 
     click_on 'Accept and send application'
 

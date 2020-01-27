@@ -58,6 +58,22 @@ describe 'Radios' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Radios - Fourth'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'Four - summary version'
 
+    # Change
+    find('.govuk-summary-list:nth-of-type(4) .govuk-summary-list__actions a').click
+
+    # radios
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - Fourth - section heading'
+    expect(page).to have_selector 'h1', text: 'Radios - Fourth'
+    expect(page).to have_selector '.govuk-hint', text: 'Radios - Fourth - hint text'
+
+    choose 'radios-four', option: '1', visible: false
+    continue
+
+    # summary
+    expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Radios - Fourth - section heading'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Radios - Fourth'
+    expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'One - summary version'
+
     click_on 'Accept and send application'
 
     # confirmation
