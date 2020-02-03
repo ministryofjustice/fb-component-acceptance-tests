@@ -58,7 +58,13 @@ describe 'Radios' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Radios - Fourth'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'Four - summary version'
 
-    # Change
+    ########################################
+    #                                      #
+    #   CHANGE                             #
+    #                                      #
+    ########################################
+
+    # change
     find('.govuk-summary-list:nth-of-type(4) .govuk-summary-list__actions a').click
 
     # radios
@@ -73,6 +79,47 @@ describe 'Radios' do
     expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Radios - Fourth - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Radios - Fourth'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'One - summary version'
+
+    ########################################
+    #                                      #
+    #   BACK                               #
+    #                                      #
+    ########################################
+
+    # back
+    find('.govuk-back-link').click
+
+    # fourth
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - Fourth - section heading'
+    find('.govuk-back-link').click
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - Third - section heading'
+    find('.govuk-back-link').click
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - Second - section heading'
+    find('.govuk-back-link').click
+
+    # first
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - First - section heading'
+    continue
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - Second - section heading'
+    continue
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - Third - section heading'
+    continue
+
+    # fourth
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - Fourth - section heading'
+    continue
+
+    # summary
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Radios - Summary - section heading'
+    expect(page).to have_selector 'h1', text: 'Summary'
 
     click_on 'Accept and send application'
 

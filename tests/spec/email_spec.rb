@@ -46,7 +46,13 @@ describe 'Email' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Email - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'form-builder-developers@digital.justice.gov.uk'
 
-    # Change
+    ########################################
+    #                                      #
+    #   CHANGE                             #
+    #                                      #
+    ########################################
+
+    # change
     find('.govuk-summary-list:nth-of-type(3) .govuk-summary-list__actions a').click
 
     # email
@@ -61,6 +67,39 @@ describe 'Email' do
     expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Email - Third - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Email - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'form-builder-team@digital.justice.gov.uk'
+
+    ########################################
+    #                                      #
+    #   BACK                               #
+    #                                      #
+    ########################################
+
+    # back
+    find('.govuk-back-link').click
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Email - Third - section heading'
+    find('.govuk-back-link').click
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Email - Second - section heading'
+    find('.govuk-back-link').click
+
+    # first
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Email - First - section heading'
+    continue
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Email - Second - section heading'
+    continue
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Email - Third - section heading'
+    continue
+
+    # summary
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Email - Summary - section heading'
+    expect(page).to have_selector 'h1', text: 'Summary'
 
     click_on 'Accept and send application'
 

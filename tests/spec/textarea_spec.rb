@@ -46,7 +46,13 @@ describe 'Textarea' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Textarea - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'Three'
 
-    # Change
+    ########################################
+    #                                      #
+    #   CHANGE                             #
+    #                                      #
+    ########################################
+
+    # change
     find('.govuk-summary-list:nth-of-type(3) .govuk-summary-list__actions a').click
 
     # textarea
@@ -61,6 +67,39 @@ describe 'Textarea' do
     expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Textarea - Third - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Textarea - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: 'One'
+
+    ########################################
+    #                                      #
+    #   BACK                               #
+    #                                      #
+    ########################################
+
+    # back
+    find('.govuk-back-link').click
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Textarea - Third - section heading'
+    find('.govuk-back-link').click
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Textarea - Second - section heading'
+    find('.govuk-back-link').click
+
+    # first
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Textarea - First - section heading'
+    continue
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Textarea - Second - section heading'
+    continue
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Textarea - Third - section heading'
+    continue
+
+    # summary
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Textarea - Summary - section heading'
+    expect(page).to have_selector 'h1', text: 'Summary'
 
     click_on 'Accept and send application'
 

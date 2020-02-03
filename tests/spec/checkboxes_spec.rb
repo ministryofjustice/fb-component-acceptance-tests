@@ -61,7 +61,13 @@ describe 'Checkboxes' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Checkboxes - Fourth'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: /One - summary version\s*Two - summary version\s*Three - summary version\s*Four - summary version/
 
-    # Change
+    ########################################
+    #                                      #
+    #   CHANGE                             #
+    #                                      #
+    ########################################
+
+    # change
     find('.govuk-summary-list:nth-of-type(4) .govuk-summary-list__actions a').click
 
     # checkboxes
@@ -78,6 +84,47 @@ describe 'Checkboxes' do
     expect(page).to have_selector 'h2:nth-of-type(4)', text: 'Checkboxes - Fourth - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__key', text: 'Checkboxes - Fourth'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(4) .govuk-summary-list__value', text: 'Four - summary version'
+
+    ########################################
+    #                                      #
+    #   BACK                               #
+    #                                      #
+    ########################################
+
+    # back
+    find('.govuk-back-link').click
+
+    # fourth
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - Fourth - section heading'
+    find('.govuk-back-link').click
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - Third - section heading'
+    find('.govuk-back-link').click
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - Second - section heading'
+    find('.govuk-back-link').click
+
+    # first
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - First - section heading'
+    continue
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - Second - section heading'
+    continue
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - Third - section heading'
+    continue
+
+    # fourth
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - Fourth - section heading'
+    continue
+
+    # summary
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Checkboxes - Summary - section heading'
+    expect(page).to have_selector 'h1', text: 'Summary'
 
     click_on 'Accept and send application'
 

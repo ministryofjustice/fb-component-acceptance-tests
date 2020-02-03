@@ -46,7 +46,13 @@ describe 'Number' do
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Number - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: '3'
 
-    # Change
+    ########################################
+    #                                      #
+    #   CHANGE                             #
+    #                                      #
+    ########################################
+
+    # change
     find('.govuk-summary-list:nth-of-type(3) .govuk-summary-list__actions a').click
 
     # number
@@ -61,6 +67,39 @@ describe 'Number' do
     expect(page).to have_selector 'h2:nth-of-type(3)', text: 'Number - Third - section heading'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__key', text: 'Number - Third'
     expect(page).to have_selector '.govuk-summary-list:nth-of-type(3) .govuk-summary-list__value', text: '1'
+
+    ########################################
+    #                                      #
+    #   BACK                               #
+    #                                      #
+    ########################################
+
+    # back
+    find('.govuk-back-link').click
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Number - Third - section heading'
+    find('.govuk-back-link').click
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Number - Second - section heading'
+    find('.govuk-back-link').click
+
+    # first
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Number - First - section heading'
+    continue
+
+    # second
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Number - Second - section heading'
+    continue
+
+    # third
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Number - Third - section heading'
+    continue
+
+    # summary
+    expect(page).to have_selector '.fb-sectionHeading', text: 'Number - Summary - section heading'
+    expect(page).to have_selector 'h1', text: 'Summary'
 
     click_on 'Accept and send application'
 
