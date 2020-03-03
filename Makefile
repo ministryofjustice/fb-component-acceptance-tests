@@ -6,10 +6,10 @@ setup: .runner .components .submitter .datastore .filestore  .service-token-cach
 .filestore:
 	git clone git@github.com:ministryofjustice/fb-user-filestore.git .filestore
 
-.components: make-components copy-components
-
 .runner:
 	git clone git@github.com:ministryofjustice/fb-runner-node.git .runner
+
+.components: make-components copy-components
 
 .submitter:
 	git clone git@github.com:ministryofjustice/fb-submitter.git .submitter
@@ -17,8 +17,7 @@ setup: .runner .components .submitter .datastore .filestore  .service-token-cach
 .service-token-cache:
 	git clone git@github.com:ministryofjustice/fb-service-token-cache.git .service-token-cache
 
-destroy: .runner .components .submitter .datastore .filestore .service-token-cache
-	docker-compose down
+destroy: stop clean
 
 make-components:
 	mkdir -p .components/autocomplete
