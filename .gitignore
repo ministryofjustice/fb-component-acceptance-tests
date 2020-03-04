@@ -4,6 +4,7 @@
 .filestore
 .datastore
 .runner
+.features
 .components
 .service-token-cache
 
